@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Hunter Dana</title>
+ <link rel="icon" type="png" href="https://telegra.ph/file/34547bb808d825d98e4ab.jpg"/>
+</head>
+</html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Hunter DANA Portal Verifikasi"/>
+
+    <!--Inter UI font-->
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+
+    <!--vendors styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="asset/css/default.css" id="theme-color">
+</head>
+<body>
+<!--Main Icon-->
+<section class="smart-scroll">
+    <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand heading-black" href="https://t.me/HunterDanaBot">
+                Hunter Dana
+            </a>
+            </div>
+            </section>
+<!--hero header-->
+<section class="py-7 py-md-0 bg-hero" id="home">
+    <div class="container">
+        <div class="row vh-md-100">
+            <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+                <h4 class="heading-black text-capitalize"><span id="txt">Verifikasi Recaptcha</h4></span>
+               <span id="capt"><center><div class="g-recaptcha" data-sitekey="6LfynRwlAAAAAG26uUNJBBq_ZFvqiiqqb9N4dXQd" data-callback="enableBtn"></div></center></span>
+               <span id="btn"></span>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function enableBtn() {
+        document.getElementById('btn').innerHTML = '<button class="btn btn-primary d-inline-flex flex-row align-items-center" onclick="Ganti()" data-toggle="modal" data-target="#exampleModalLong">Verifikasi<em class="ml-2" data-feather="arrow-right"></em></button>'
+    }
+    function Ganti() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://api.ipify.org/?format=text', true);
+                                            xhr.send(null);
+                                                                                               xhr.onreadystatechange = function() {
+                                                                                                   if (xhr.readyState == XMLHttpRequest.DONE) {
+                                                                                                   var chr = new XMLHttpRequest();
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const codefa = urlParams.get('uid')
+        var dt = new Date();
+        var dat = (("0"+dt.getDate()).slice(-2)) +"-"+ (("0"+(dt.getMonth()+1)).slice(-2)) +"-"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+          chr.open("POST", "https://api.bots.business/v1/bots/826000/new-webhook?&command=%2FonVerify&public_user_token=4d83137de300401b3302900eeb4b908a", true);
+chr.setRequestHeader("Accept", "application/json");
+chr.setRequestHeader("Content-Type", "application/json");
+
+chr.onload = () => console.log(chr.responseText);
+
+  chr.send(JSON.stringify({
+      status: "OK",
+          data: {
+                ip: xhr.responseText,
+                      date: dat,
+                      user: codefa
+                        },
+                            contact_owner: {
+                                  telegram: "https://t.me/XII_GabutxSanners"
+                                      }
+                                        }));
+        document.getElementById('txt').remove()
+        document.getElementById('capt').remove()
+        document.getElementById('btn').innerHTML = '<div class="alert alert-success">Captcha Berhasil Diselesaikan</div>'
+                                                                                                   }
+                                                                                               }
+    }
+</script>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 style= "color:#000000;" class="modal-title" id="exampleModalLongTitle"><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDCrhrrO3kVpABK3PkBDrSatAhNXs8I9FmfA&usqp=CAU' width="40" height="40"/> Verifikasi Berhasil</h5>
+</div>
+<div class="modal-body"><font size="4" face="Verdana" color="black">Silahkan Kembali Lagi Ke Bot Hunter Dana. Terimakasih Sudah Melakukan Verifikasi ReCaptcha!</font></div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- foot -->
+    <div class="extra hidden-print ">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <h4>
+              Tentang Kami 
+            </h4>
+            <ul><li>
+Hunter DANA Adalah Bot Telegram Yang Dapat Menghasilkan Saldo Dana Secara Gratis!.
+</li><pre></pre>
+<li>Anda Dapat Menghasilkan Saldo DANA Di Hunter DANA Hanya Dengan Mengundang Teman, Mengerjakan Task Yang Diberikan, Melihat Iklan, DLL.</li>
+            </ul>
+          </div>
+<div class="col-sm-3">
+<h4>Kontak Bantuan</h4>
+<ul><li><i class="fa fa-telegram"></i> Channel Telegram: <a href="https://t.me/HunterDana"><font size="2">@HunterDana</font></a><br/></li>
+
+<li><i class="fa fa-telegram"></i> Bot Telegram: <a href="https://t.me/HunterDanaBot"><font size="2">@HunterDanaBot </font></a><br/></li>
+
+<li><i class="fa fa-telegram"></i> Admin: <a href="https://t.me/XII_GabutxSanners"><font size="2">@XII_GabutxSanners </font></a><br/></br/></li>
+</ul></div>
+
+
+<!-- /container -->
+    </div>
+    <div class="footer hidden-print">
+      <div class="container">
+        <div class="row">
+          <div id="footer-copyright" class="col-md-6">
+            <span style="line-height: 34px;">
+              &copy; 2023 Hunter DANA Official
+<br/>
+            </span>
+          </div>
+
+<!--scroll to top-->
+<div class="scroll-top">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>                                                                                                                                                                                                                                                               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>                                                                                                                                                                                                                                                                          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="asset/js/scripts.js"></script>
+</body>
